@@ -1,0 +1,11 @@
+framework module Roll {
+  umbrella header "Roll.h"
+
+  export *
+  module * { export * }
+}
+
+module Roll.Swift {
+    header "Roll-Swift.h"
+    requires objc
+}

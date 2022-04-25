@@ -1,0 +1,530 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Roll
+import AVFoundation
+import AVKit
+import AVFoundation.AVPlayerItem
+import CoreMedia
+import Foundation
+import MediaPlayer
+@_exported import Roll
+import Swift
+import UIKit
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class TransportSlider : UIKit.UISlider {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var thumbImage: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) final public var fractionalValue: Swift.Float {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var isSeeking: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var seekBeginPosition: Swift.Float?
+  @_Concurrency.MainActor(unsafe) final public var onBeginTrackingSelector: ObjectiveC.Selector?
+  @_Concurrency.MainActor(unsafe) final public var onEndTrackingSelector: ObjectiveC.Selector?
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var trackHeight: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override final public func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override final public func thumbImage(for state: UIKit.UIControl.State) -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) @objc override final public func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func trackRect(forBounds bounds: CoreGraphics.CGRect) -> CoreGraphics.CGRect
+  @objc deinit
+}
+public struct MediaSelectionOptionsWrapper {
+  public init?(with item: AVFoundation.AVPlayerItem)
+}
+extension Roll.MediaSelectionOptionsWrapper {
+  public var audibleOptionsCount: Swift.Int {
+    get
+  }
+  public var isSubtitlesOff: Swift.Bool {
+    get
+  }
+  public var legibleOptionsCount: Swift.Int {
+    get
+  }
+  public subscript(mediaCharacteristic: AVFoundation.AVMediaCharacteristic, atIndex index: Swift.Int) -> (Swift.String, Swift.Bool) {
+    get
+  }
+  @discardableResult
+  public func disableLegibleOption() -> Swift.Bool
+  @discardableResult
+  public func selectAudibleOptionAt(_ index: Swift.Int) -> Swift.Bool
+  @discardableResult
+  public func selectLegibleOptionAt(_ index: Swift.Int) -> Swift.Bool
+}
+extension Roll.MediaSelectionOptionsWrapper {
+  public var languageOptionsGroup: [MediaPlayer.MPNowPlayingInfoLanguageOptionGroup] {
+    get
+  }
+  public var currentLanguageOptions: [MediaPlayer.MPNowPlayingInfoLanguageOption] {
+    get
+  }
+  @discardableResult
+  public func disableMediaSelectionOptionCorrespondingTo(_ nowPlayingInfoLanguageOption: MediaPlayer.MPNowPlayingInfoLanguageOption) -> MediaPlayer.MPRemoteCommandHandlerStatus
+  @discardableResult
+  public func selectMediaSelectionOptionCorrespondingTo(nowPlayingInfoLanguageOption: MediaPlayer.MPNowPlayingInfoLanguageOption) -> MediaPlayer.MPRemoteCommandHandlerStatus
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class OverCurrentContextModalContentViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static let nominalAspectRationRect: CoreGraphics.CGRect
+  @_Concurrency.MainActor(unsafe) final public let largestContainerRect: CoreGraphics.CGRect
+  @_Concurrency.MainActor(unsafe) public var containerViewWidthConstraint: UIKit.NSLayoutConstraint!
+  @_Concurrency.MainActor(unsafe) public var containerViewHeightConstraint: UIKit.NSLayoutConstraint!
+  @_Concurrency.MainActor(unsafe) final public let blurView: UIKit.UIVisualEffectView
+  @_Concurrency.MainActor(unsafe) final public let containerView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+  @objc deinit
+}
+extension Roll.OverCurrentContextModalContentViewController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+public enum AVAsynchronousKeyValueLoadingValue<Wrapped> {
+  case notLoaded
+  case loaded(Wrapped)
+  public func map<T>(_ transform: (Wrapped) -> T) -> Roll.AVAsynchronousKeyValueLoadingValue<T>
+}
+@inline(__always) public func unpack<A, B, C>(_ tuple: (A, (B, C))) -> (A, B, C)
+@inline(__always) public func unpack<A, B, C, D>(_ tuple: (A, (B, C, D))) -> (A, B, C, D)
+@inline(__always) public func unpack<A, B, C, D, E>(_ tuple: (A, (B, C, D, E))) -> (A, B, C, D, E)
+@inline(__always) public func zip2<A, B>(_ xs: [A], _ ys: [B]) -> [(A, B)]
+@inline(__always) public func zip3<A, B, C>(_ xs: [A], _ ys: [B], _ zs: [C]) -> [(A, B, C)]
+@inline(__always) public func zip4<A, B, C, D>(_ ws: [A], _ xs: [B], _ ys: [C], _ zs: [D]) -> [(A, B, C, D)]
+@inline(__always) public func zip5<A, B, C, D, E>(_ vs: [A], _ ws: [B], _ xs: [C], _ ys: [D], _ zs: [E]) -> [(A, B, C, D, E)]
+@inline(__always) public func zip2<A, B, C>(with f: @escaping (A, B) -> C) -> ([A], [B]) -> [C]
+@inline(__always) public func zip3<A, B, C, D>(with f: @escaping (A, B, C) -> D) -> ([A], [B], [C]) -> [D]
+@inline(__always) public func zip4<A, B, C, D, E>(with f: @escaping (A, B, C, D) -> E) -> ([A], [B], [C], [D]) -> [E]
+@inline(__always) public func zip5<A, B, C, D, E, F>(with f: @escaping (A, B, C, D, E) -> F) -> ([A], [B], [C], [D], [E]) -> [F]
+@inline(__always) public func zip2<A, B>(_ a: A?, _ b: B?) -> (A, B)?
+@inline(__always) public func zip3<A, B, C>(_ a: A?, _ b: B?, _ zs: C?) -> (A, B, C)?
+@inline(__always) public func zip4<A, B, C, D>(_ a: A?, _ b: B?, _ c: C?, _ d: D?) -> (A, B, C, D)?
+@inline(__always) public func zip5<A, B, C, D, E>(_ a: A?, _ b: B?, _ c: C?, _ d: D?, _ e: E?) -> (A, B, C, D, E)?
+@inline(__always) public func zip2<A, B, C>(with f: @escaping (A, B) -> C) -> (A?, B?) -> C?
+@inline(__always) public func zip3<A, B, C, D>(with f: @escaping (A, B, C) -> D) -> (A?, B?, C?) -> D?
+@inline(__always) public func zip4<A, B, C, D, E>(with f: @escaping (A, B, C, D) -> E) -> (A?, B?, C?, D?) -> E?
+@inline(__always) public func zip5<A, B, C, D, E, F>(with f: @escaping (A, B, C, D, E) -> F) -> (A?, B?, C?, D?, E?) -> F?
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class PlaybackSpeedButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) final public var speed: Roll.PlaybackSpeedButton.Speed {
+    get
+    set
+  }
+  @objc deinit
+}
+extension Roll.PlaybackSpeedButton {
+  public enum Speed : Swift.Equatable, Swift.ExpressibleByFloatLiteral {
+    case normal, multiplied(by: Swift.Float)
+    public init(floatLiteral value: Swift.Float)
+    public var value: Swift.Float {
+      get
+    }
+    public static func == (a: Roll.PlaybackSpeedButton.Speed, b: Roll.PlaybackSpeedButton.Speed) -> Swift.Bool
+    public typealias FloatLiteralType = Swift.Float
+  }
+}
+@objc @_Concurrency.MainActor(unsafe) final public class PlayerViewControllerTransitionContext : ObjectiveC.NSObject, UIKit.UIViewControllerContextTransitioning {
+  @_Concurrency.MainActor(unsafe) @objc final public var containerView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) @objc final public var isAnimated: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public var presentationStyle: UIKit.UIModalPresentationStyle
+  @_Concurrency.MainActor(unsafe) @objc final public var targetTransform: CoreGraphics.CGAffineTransform
+  @_Concurrency.MainActor(unsafe) @objc final public var transitionWasCancelled: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public init(isPresenting: Swift.Bool, from fromVC: UIKit.UIViewController, to toVC: UIKit.UIViewController, completion: @escaping (Swift.Bool) -> Swift.Void = { _ in })
+  @_Concurrency.MainActor(unsafe) @objc final public func completeTransition(_ didComplete: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc final public func viewController(forKey key: UIKit.UITransitionContextViewControllerKey) -> UIKit.UIViewController?
+  @_Concurrency.MainActor(unsafe) @objc final public func view(forKey key: UIKit.UITransitionContextViewKey) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc final public func initialFrame(for vc: UIKit.UIViewController) -> CoreGraphics.CGRect
+  @_Concurrency.MainActor(unsafe) @objc final public func finalFrame(for vc: UIKit.UIViewController) -> CoreGraphics.CGRect
+  @_Concurrency.MainActor(unsafe) @objc final public var isInteractive: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func updateInteractiveTransition(_ percentComplete: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) @objc final public func finishInteractiveTransition()
+  @_Concurrency.MainActor(unsafe) @objc final public func cancelInteractiveTransition()
+  @_Concurrency.MainActor(unsafe) @objc final public func pauseInteractiveTransition()
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func embed(_ view: UIKit.UIView, atIndex index: Swift.Int?, insets: UIKit.UIEdgeInsets)
+  @_Concurrency.MainActor(unsafe) public func embedInCenter(_ view: UIKit.UIView, atIndex index: Swift.Int? = nil)
+}
+public struct StreamRepresentation {
+  public var allowCellularAccess: Swift.Bool
+  public let artwork: UIKit.UIImage?
+  public var cookies: [Foundation.HTTPCookie]
+  public let id: Swift.String
+  public let location: Foundation.URL
+  public var startsImmediately: Swift.Bool
+  public let supplementaryTitle: Swift.String
+  public let title: Swift.String
+  public var trait: Roll.StreamRepresentation.Trait
+  public init(id: Swift.String, location: Foundation.URL, title: Swift.String, supplementaryTitle: Swift.String, trait: Roll.StreamRepresentation.Trait, allowCellularAccess: Swift.Bool = true, startsImmediately: Swift.Bool = true, cookies: [Foundation.HTTPCookie] = [], artwork: UIKit.UIImage? = nil)
+}
+extension Roll.StreamRepresentation {
+  public enum Trait : Swift.Equatable {
+    case live
+    case replay(startPosition: Foundation.TimeInterval = 0.0)
+    public static func == (a: Roll.StreamRepresentation.Trait, b: Roll.StreamRepresentation.Trait) -> Swift.Bool
+  }
+}
+final public class TaskWitness {
+  final public let name: Swift.String
+  final public var isChecked: Swift.Bool {
+    get
+  }
+  final public var isUnchecked: Swift.Bool {
+    get
+  }
+  public init(named name: Swift.String, action: @escaping () -> Swift.Void)
+  final public func check()
+  @objc deinit
+}
+extension UIKit.UIControl {
+  @_Concurrency.MainActor(unsafe) public func addDefaultAction(_ selector: ObjectiveC.Selector)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class PlayerSupplementaryControlsView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var currentExpandedVariableValueControl: Roll.VariableValueControl? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) final public var setCurrentPlaybackSpeed: (Swift.Float) -> () {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class ReplayTransportView : UIKit.UIControl & Roll.TransportView {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var airPlayButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var mediaSelectionOptionsButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var nextStreamButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var pictureInPictureButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var playerSupplementaryControlsView: Roll.PlayerSupplementaryControlsView? {
+    get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var playheadLabel: UIKit.UILabel? {
+    get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var playPauseButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var presentationToggleButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var previousStreamButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var slider: Roll.TransportSlider? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var stepBackwardButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var stepForwardButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var totalDurationLabel: UIKit.UILabel? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func willMove(toSuperview newSuperview: UIKit.UIView?)
+  @_Concurrency.MainActor(unsafe) final public func updateSubviewsStreamDuration(_ duration: Foundation.TimeInterval)
+  @objc deinit
+}
+extension Roll.ReplayTransportView {
+  @_Concurrency.MainActor(unsafe) public static var standardView: Roll.ReplayTransportView {
+    get
+  }
+}
+extension AVFoundation.AVPlayer {
+  public func add(periodicTimeObserver: Roll.PeriodicTimeObserver, for streamId: Swift.String) -> Any
+}
+public struct PeriodicTimeObserver {
+  public let handler: (Foundation.TimeInterval, Swift.String) -> Swift.Void
+  public let queue: Dispatch.DispatchQueue
+  public let timeInterval: Foundation.TimeInterval
+  public init(queue: Dispatch.DispatchQueue = .main, timeInterval: Foundation.TimeInterval, handler: @escaping (Foundation.TimeInterval, Swift.String) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class LiveTransportView : UIKit.UIControl & Roll.TransportView {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var airPlayButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var liveTextLabel: UIKit.UILabel? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var mediaSelectionOptionsButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var pictureInPictureButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var playerSupplementaryControlsView: Roll.PlayerSupplementaryControlsView? {
+    get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var playPauseButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) final public var presentationToggleButton: UIKit.UIButton? {
+    @objc get
+  }
+  @objc deinit
+}
+extension Roll.LiveTransportView {
+  @_Concurrency.MainActor(unsafe) public static var standardView: Roll.LiveTransportView {
+    get
+  }
+}
+extension Swift.Double {
+  public var formattedString: Swift.String {
+    get
+  }
+}
+@objc @_Concurrency.MainActor(unsafe) final public class PlayerInContextModalPresentationAnimator : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+  @_Concurrency.MainActor(unsafe) public init(isPresenting: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) @objc final public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc final public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc deinit
+}
+precedencegroup ForwardApplication {
+  associativity: left
+}
+infix operator |> : ForwardApplication
+public func |> <A, B>(a: A, f: (A) -> B) -> B
+precedencegroup ForwardComposition {
+  associativity: left
+  higherThan: ForwardApplication, EffectfulComposition, BackwardsComposition
+}
+infix operator >>> : ForwardComposition
+public func >>> <A, B, C>(f: @escaping (A) -> B, g: @escaping (B) -> C) -> (A) -> C
+precedencegroup BackwardsComposition {
+  associativity: left
+}
+infix operator <<< : BackwardsComposition
+public func <<< <A, B, C>(f: @escaping (B) -> C, g: @escaping (A) -> B) -> (A) -> C
+precedencegroup SingleTypeComposition {
+  associativity: left
+  higherThan: ForwardApplication
+}
+infix operator <> : SingleTypeComposition
+public func <> <A>(f: @escaping (A) -> A, g: @escaping (A) -> A) -> (A) -> A
+public func <> <A>(f: @escaping (inout A) -> Swift.Void, g: @escaping (inout A) -> Swift.Void) -> ((inout A) -> Swift.Void)
+public func <> <A>(f: @escaping (A) -> Swift.Void, g: @escaping (A) -> Swift.Void) -> ((A) -> Swift.Void)
+public func compose<A, B, C>(_ f: @escaping (A) -> (B, [Swift.String]), _ g: @escaping (B) -> (C, [Swift.String])) -> (A) -> (C, [Swift.String])
+precedencegroup EffectfulComposition {
+  associativity: left
+  higherThan: ForwardApplication
+}
+infix operator >=> : EffectfulComposition
+public func >=> <A, B, C>(f: @escaping (A) -> B?, g: @escaping (B) -> C?) -> ((A) -> C?)
+public func >=> <A, B, C>(f: @escaping (A) -> [B], g: @escaping (B) -> [C]) -> ((A) -> [C])
+public func curry<A, B, C>(_ f: @escaping (A, B) -> C) -> (A) -> (B) -> C
+public func flip<A, B, C>(_ f: @escaping (A) -> (B) -> C) -> (B) -> (A) -> C
+public func flip<A, B>(_ f: @escaping (A) -> () -> (B)) -> () -> (A) -> B
+public func zurry<A>(_ f: () -> A) -> A
+public func map<A, B>(_ f: @escaping (A) -> B) -> ([A]) -> [B]
+public func map<A, B, E>(_ f: @escaping (A) -> B) -> (@escaping (E) -> A) -> ((E) -> B)
+public func pullback<A, B, R>(_ f: @escaping (B) -> A) -> (@escaping (A) -> R) -> ((B) -> R)
+public func filter<A>(_ p: @escaping (A) -> Swift.Bool) -> ([A]) -> [A]
+public func map<A, B>(_ f: @escaping (A) -> B) -> (A?) -> (B?)
+public func const<A, B>(_ a: A) -> (B) -> A
+extension CoreMedia.CMTime {
+  public static var oneSecondInterval: CoreMedia.CMTime
+}
+public enum Either<A, B> {
+  case left(A)
+  case right(B)
+  public var left: A? {
+    get
+  }
+  public var right: B? {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class PlayerViewController : UIKit.UIViewController {
+  public enum PlaybackStatus : Swift.Equatable {
+    case notStarted, paused, playing, waiting(reason: Swift.String)
+    public static func == (a: Roll.PlayerViewController.PlaybackStatus, b: Roll.PlayerViewController.PlaybackStatus) -> Swift.Bool
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var definesPresentationContext: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: Roll.PlayerViewControllerDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override final public var modalPresentationStyle: UIKit.UIModalPresentationStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) final public var periodicTimeObserver: Roll.PeriodicTimeObserver?
+  @_Concurrency.MainActor(unsafe) final public var supportsSystemPictureInPicture: Swift.Bool
+  @objc convenience dynamic public init()
+  @objc deinit
+}
+extension Roll.PlayerViewController {
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMove(toParent parent: UIKit.UIViewController?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+}
+extension Roll.PlayerViewController {
+  @_Concurrency.MainActor(unsafe) final public func replace(stream: Roll.StreamRepresentation)
+  @_Concurrency.MainActor(unsafe) final public func play()
+  @_Concurrency.MainActor(unsafe) final public func pause()
+}
+extension Roll.PlayerViewController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+extension Roll.PlayerViewController : AVKit.AVPictureInPictureControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVKit.AVPictureInPictureController)
+  @_Concurrency.MainActor(unsafe) @objc final public func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVKit.AVPictureInPictureController)
+  @_Concurrency.MainActor(unsafe) @objc final public func pictureInPictureController(_ pictureInPictureController: AVKit.AVPictureInPictureController, failedToStartPictureInPictureWithError error: Swift.Error)
+  @_Concurrency.MainActor(unsafe) @objc final public func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVKit.AVPictureInPictureController)
+  @_Concurrency.MainActor(unsafe) @objc final public func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVKit.AVPictureInPictureController)
+  @_Concurrency.MainActor(unsafe) @objc final public func pictureInPictureController(_ pictureInPictureController: AVKit.AVPictureInPictureController, restoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+}
+public struct PlayerError {
+  public let additionalDescription: Swift.String
+  public let code: Roll.PlayerError.Code
+  public let description: Swift.String
+  public let domain: Roll.PlayerError.Domain
+  public var streamId: Swift.String {
+    get
+  }
+  public let userInfo: [Swift.String : Any]
+}
+extension Roll.PlayerError {
+  public enum Domain {
+    case ad
+    case playback
+    case undefined
+    public static func == (a: Roll.PlayerError.Domain, b: Roll.PlayerError.Domain) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Code {
+    case avFoundation(Swift.Int)
+    case nsError(Swift.Int)
+    case other(Swift.Int)
+  }
+}
+public struct PlayerErrorViewing {
+  public var title: Swift.String
+  public var information: Foundation.NSAttributedString
+  public var caption: Foundation.NSAttributedString?
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class VariableValueControl : UIKit.UIControl, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) final public func collapse()
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override final public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+public struct AsynchronouslyLoadedProperties {
+  public let duration: Roll.AVAsynchronousKeyValueLoadingValue<Foundation.TimeInterval>
+  public let mediaSelectionOptionsWrapper: Roll.AVAsynchronousKeyValueLoadingValue<Roll.MediaSelectionOptionsWrapper>
+  public init(duration: Roll.AVAsynchronousKeyValueLoadingValue<Foundation.TimeInterval>, mediaSelectionOptionsWrapper: Roll.AVAsynchronousKeyValueLoadingValue<Roll.MediaSelectionOptionsWrapper>)
+}
+@objc public protocol WaitingStateAnimating {
+  @objc func startAnimating()
+  @objc func stopAnimating()
+}
+public typealias WaitingStateView = UIKit.UIView & Roll.WaitingStateAnimating
+extension UIKit.UIActivityIndicatorView : Roll.WaitingStateAnimating {
+}
+extension UIKit.UIImage {
+  public static let empty: UIKit.UIImage
+  public static func playerImage(named name: UIKit.UIImage.ImageName, size imageSize: UIKit.UIImage.ImageSize) -> UIKit.UIImage?
+  public static var transportSliderThumb: UIKit.UIImage? {
+    get
+  }
+}
+extension UIKit.UIImage {
+  public enum ImageSize : Swift.String {
+    case extraSmall
+    case small
+    case medium
+    case large
+    case extraLarge
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum ImageName : Swift.String {
+    case airplay
+    case brightness
+    case cast
+    case castConnected
+    case circle
+    case done
+    case forward10
+    case fullscreen
+    case fullscreenExit
+    case pause
+    case pip
+    case play
+    case radioButtonChecked
+    case radioButtonUnchecked
+    case replay
+    case replay10
+    case skipNext
+    case skipPrevious
+    case stop
+    case subtitles
+    case volumeDown
+    case volumeMute
+    case volumeOff
+    case volumeUp
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+public protocol TransportView {
+  var airPlayButton: UIKit.UIButton? { get }
+  var mediaSelectionOptionsButton: UIKit.UIButton? { get }
+  var pictureInPictureButton: UIKit.UIButton? { get }
+  var playerSupplementaryControlsView: Roll.PlayerSupplementaryControlsView? { get }
+  var playPauseButton: UIKit.UIButton? { get }
+  var presentationToggleButton: UIKit.UIButton? { get }
+}
+public protocol PlayerViewControllerDelegate : AnyObject {
+  func playerViewController(didStartPictureInPictureFor pvc: Roll.PlayerViewController)
+  func playerViewController(didStopPictureInPictureFor pvc: Roll.PlayerViewController)
+  func playerViewController(failedToStartPictureInPictureFor pvc: Roll.PlayerViewController, withError: Swift.Error)
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, didStartLivePlaybackForStreamIdentifiedBy identifier: Swift.String)
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, didStartVODPlaybackAt position: Foundation.TimeInterval, forStreamIdentifiedBy identifier: Swift.String)
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, didUpdatePlaybackStatus status: Roll.PlayerViewController.PlaybackStatus, forStreamIdentifiedBy identifier: Swift.String)
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, didUpdateStreamDuration length: Foundation.TimeInterval, forStreamIdentifiedBy identifier: Swift.String)
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, didFailWithError error: Roll.PlayerError, errorView: inout Roll.PlayerErrorViewing, forStreamIdentifiedBy identifier: Swift.String)
+  func playerViewController(_ pvc: Roll.PlayerViewController, isNextButtonEnabledForCurrentStreamIdentifiedBy identifier: Swift.String) -> Swift.Bool
+  func playerViewController(_ pvc: Roll.PlayerViewController, isPreviousButtonEnabledForCurrentStreamIdentifiedBy identifier: Swift.String) -> Swift.Bool
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, streamAfterStreamIdentifiedBy identifier: Swift.String) -> Roll.StreamRepresentation?
+  func playerViewController(_ playerViewController: Roll.PlayerViewController, streamBeforeStreamIdentifiedBy identifier: Swift.String) -> Roll.StreamRepresentation?
+  func playerViewController(_ pvc: Roll.PlayerViewController, configureFullScreenToggleButtonForDismissal toggle: UIKit.UIButton)
+  func playerViewController(_ pvc: Roll.PlayerViewController, configureFullScreenToggleButtonForPresentation toggle: UIKit.UIButton)
+  func playerViewController(_ pvc: Roll.PlayerViewController, shouldShowNextButtonForCurrentStreamIdentifiedBy identifier: Swift.String) -> Swift.Bool
+  func playerViewController(_ pvc: Roll.PlayerViewController, shouldShowPreviousButtonForCurrentStreamIdentifiedBy identifier: Swift.String) -> Swift.Bool
+  func playerViewController(replayPlayerViewController pvc: Roll.PlayerViewController, didStartSeekingAt beginPosition: Foundation.TimeInterval)
+  func playerViewController(replayPlayerViewController pvc: Roll.PlayerViewController, didFinishSeekingFrom beginPosition: Foundation.TimeInterval, toEndPosition endPosition: Foundation.TimeInterval)
+}
+extension Roll.PlayerError.Domain : Swift.Equatable {}
+extension Roll.PlayerError.Domain : Swift.Hashable {}
+extension UIKit.UIImage.ImageSize : Swift.Equatable {}
+extension UIKit.UIImage.ImageSize : Swift.Hashable {}
+extension UIKit.UIImage.ImageSize : Swift.RawRepresentable {}
+extension UIKit.UIImage.ImageName : Swift.Equatable {}
+extension UIKit.UIImage.ImageName : Swift.Hashable {}
+extension UIKit.UIImage.ImageName : Swift.RawRepresentable {}
