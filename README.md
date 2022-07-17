@@ -1,8 +1,15 @@
 # RollDemo
+![Minimum iOS Version](https://img.shields.io/badge/iOS%20Deployment%20Target-iOS%2012.0-blue)
+![UIKit Support](https://img.shields.io/badge/UIKit-Supported-green)
+![SwiftUI Support](https://img.shields.io/badge/SwiftUI-In%20Progress-red)
+
 
 This package is a demo version of Roll player which is a native iOS audiovisual player that builds on `AVFoundation`.
 
-Contact Information: [Rajiv Labs](mailto:rajiv.jhoomuck@icloud.com)
+Contact Information:
+- [Rajiv Labs email](mailto:rajiv.jhoomuck@icloud.com)
+- [Twitter](https://twitter.com/rajivjhoomuck)
+- [Create a Github issue](https://github.com/rajiv-labs/RollDemo/issues/new)
 
 > ⚠️: This package is a demo version of the full player, so some features have been disabled. Also playback will be interrupted after some time. If you would like to try the full player, please send an email to rajiv.jhoomuck@icloud.com or by creating an issue on GitHub. (Email will work best though)
 
@@ -13,13 +20,15 @@ Features of Roll player include (non-exhaustive):
 - Playlist support, even in PiP mode!
 - Smart error recovery (when applicable) while preserving playhead information
 - Picture-in-Picture mode (supporting devices)
+- AirPlay support
 - Now Playing Info support
+- Optimized time to playback
+- Playback start at a specific time
 - Playback control via Siri
 - Playback speed control
 - Screen dimming control
 - Volume control
 - Audio and subtitles selection (for supported HLS streams)
-- Airplay support
 - Usual video controls (play, pause, stop, rewind, fast forward and seek through the video)
 
 A default UI is provided but you can customize the UI controls as you wish, like in the following example:
@@ -88,4 +97,7 @@ A playable stream defined using `StreamRepresentation`. This structure encapsula
 Set the stream on the player to start playback.
 
 ## Full featured Roll player
-If you have tried and loved the Roll Demo, you can reach out for a full featured commercial player by emailing me at rajiv.jhoomuck@icloud.com or by creating an issue on GitHub.
+If you have tried and loved the Roll Demo, you can reach me through one of the following channels:
+- [Rajiv Labs email](mailto:rajiv.jhoomuck@icloud.com)
+- [Twitter](https://twitter.com/rajivjhoomuck)
+- [Create a Github issue](https://github.com/rajiv-labs/RollDemo/issues/new)
