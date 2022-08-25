@@ -11,7 +11,7 @@ Contact Information:
 - [Twitter](https://twitter.com/rajivjhoomuck)
 - [Create a Github issue](https://github.com/rajiv-labs/RollDemo/issues/new)
 
-> ⚠️: This package is a demo version of the full player, so some features have been disabled. Also playback will be interrupted after some time. If you would like to try the full player, please send an email to rajiv.jhoomuck@icloud.com or by creating an issue on GitHub. (Email will work best though)
+> **Warning** This package is a demo version of the full player, so some features have been disabled. Also playback will be interrupted after some time. If you would like to try the full player, please send an email to rajiv.jhoomuck@icloud.com or by creating an issue on GitHub. (Email will work best though)
 
 ![Default Roll Player UI](./markdown-assets/readme/default-ui.jpeg)
 
