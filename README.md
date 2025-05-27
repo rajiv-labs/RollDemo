@@ -1,5 +1,5 @@
 # RollDemo
-![Minimum iOS Version](https://img.shields.io/badge/iOS%20Deployment%20Target-iOS%2012.0-blue)
+![Minimum iOS Version](https://img.shields.io/badge/Minimum%20iOS%20Deployment%20Target-iOS%2012.0-blue)
 ![UIKit Support](https://img.shields.io/badge/UIKit-Supported-green)
 ![SwiftUI Support](https://img.shields.io/badge/SwiftUI-In%20Progress-red)
 
